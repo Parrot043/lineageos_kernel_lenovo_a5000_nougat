@@ -501,22 +501,22 @@ unsigned int PTP_INIT_01(void)
     ptp_init_value.FREQPCT7 = freq_7;
 
     ptp_init_value.DETWINDOW   = 0xa28;   // 100 us, This is the PTP Detector sampling time as represented in cycles of bclk_ck during INIT. 52 MHz
-    ptp_init_value.VMAX        = 0x5D;    // 1.28125v (700mv + n * 6.25mv)
+    ptp_init_value.VMAX        = 0x55;    // 1.28125v (700mv + n * 6.25mv)
     #ifdef CONFIG_MTK_SDIOAUTOK_SUPPORT
     if (is_vcore_ss_corner())
     {
-        ptp_init_value.VMIN    = 0x4E;    // 1.1850v (700mv + n * 6.25mv)
+        ptp_init_value.VMIN    = 0x46;    // 1.1850v (700mv + n * 6.25mv)
     }
     else
     {
-        ptp_init_value.VMIN    = 0x48;    // 1.1500v (700mv + n * 6.25mv)
+        ptp_init_value.VMIN    = 0x40;    // 1.1500v (700mv + n * 6.25mv)
     }
     #else
-    ptp_init_value.VMIN        = 0x48;    // 1.1500v (700mv + n * 6.25mv)
+    ptp_init_value.VMIN        = 0x40;    // 1.1500v (700mv + n * 6.25mv)
     #endif
     ptp_init_value.DTHI        = 0x01;    // positive
     ptp_init_value.DTLO        = 0xfe;    // negative (2s compliment)
-    ptp_init_value.VBOOT       = 0x48;    // 115v  (700mv + n * 6.25mv)
+    ptp_init_value.VBOOT       = 0x40;    // 115v  (700mv + n * 6.25mv)
     ptp_init_value.DETMAX      = 0xffff;  // This timeout value is in cycles of bclk_ck.
 
     if (ptp_version == 1)
@@ -594,22 +594,22 @@ unsigned int PTP_INIT_02(void)
     ptp_init_value.FREQPCT7 = freq_7;
 
     ptp_init_value.DETWINDOW   = 0xa28;   // 100 us, This is the PTP Detector sampling time as represented in cycles of bclk_ck during INIT. 52 MHz
-    ptp_init_value.VMAX        = 0x5D;    // 1.28125v (700mv + n * 6.25mv)
+    ptp_init_value.VMAX        = 0x55;    // 1.28125v (700mv + n * 6.25mv)
     #ifdef CONFIG_MTK_SDIOAUTOK_SUPPORT
     if (is_vcore_ss_corner())
     {
-        ptp_init_value.VMIN    = 0x4E;    // 1.1850v (700mv + n * 6.25mv)
+        ptp_init_value.VMIN    = 0x46;    // 1.1850v (700mv + n * 6.25mv)
     }
     else
     {
-        ptp_init_value.VMIN    = 0x48;    // 1.1500v (700mv + n * 6.25mv)
+        ptp_init_value.VMIN    = 0x40;    // 1.1500v (700mv + n * 6.25mv)
     }
     #else
-    ptp_init_value.VMIN        = 0x48;    // 1.1500v (700mv + n * 6.25mv)
+    ptp_init_value.VMIN        = 0x40;    // 1.1500v (700mv + n * 6.25mv)
     #endif
     ptp_init_value.DTHI        = 0x01;    // positive
     ptp_init_value.DTLO        = 0xfe;    // negative (2s compliment)
-    ptp_init_value.VBOOT       = 0x48;    // 115v  (700mv + n * 6.25mv)
+    ptp_init_value.VBOOT       = 0x40;    // 115v  (700mv + n * 6.25mv)
     ptp_init_value.DETMAX      = 0xffff;  // This timeout value is in cycles of bclk_ck.
 
     if (ptp_version == 1)
@@ -696,22 +696,22 @@ unsigned int PTP_MON_MODE(void)
     ptp_init_value.FREQPCT7 = freq_7;
 
     ptp_init_value.DETWINDOW   = 0xa28;   // 100 us, This is the PTP Detector sampling time as represented in cycles of bclk_ck during INIT. 52 MHz
-    ptp_init_value.VMAX        = 0x5D;    // 1.28125v (700mv + n * 6.25mv)
+    ptp_init_value.VMAX        = 0x55;    // 1.28125v (700mv + n * 6.25mv)
     #ifdef CONFIG_MTK_SDIOAUTOK_SUPPORT
     if (is_vcore_ss_corner())
     {
-        ptp_init_value.VMIN    = 0x4E;    // 1.1850v (700mv + n * 6.25mv)
+        ptp_init_value.VMIN    = 0x46;    // 1.1850v (700mv + n * 6.25mv)
     }
     else
     {
-        ptp_init_value.VMIN    = 0x48;    // 1.1500v (700mv + n * 6.25mv)
+        ptp_init_value.VMIN    = 0x40;    // 1.1500v (700mv + n * 6.25mv)
     }
     #else
-    ptp_init_value.VMIN        = 0x48;    // 1.1500v (700mv + n * 6.25mv)
+    ptp_init_value.VMIN        = 0x40;    // 1.1500v (700mv + n * 6.25mv)
     #endif
     ptp_init_value.DTHI        = 0x01;    // positive
     ptp_init_value.DTLO        = 0xfe;    // negative (2s compliment)
-    ptp_init_value.VBOOT       = 0x48;    // 115v  (700mv + n * 6.25mv)
+    ptp_init_value.VBOOT       = 0x40;    // 115v  (700mv + n * 6.25mv)
     ptp_init_value.DETMAX      = 0xffff;  // This timeout value is in cycles of bclk_ck.
 
     if (ptp_version == 1)
@@ -1134,22 +1134,22 @@ unsigned int PTP_INIT_01_API(void)
     ptp_init_value.FREQPCT7 = freq_7;
 
     ptp_init_value.DETWINDOW   = 0xa28;   // 100 us, This is the PTP Detector sampling time as represented in cycles of bclk_ck during INIT. 52 MHz
-    ptp_init_value.VMAX        = 0x5D;    // 1.28125v (700mv + n * 6.25mv)
+    ptp_init_value.VMAX        = 0x55;    // 1.28125v (700mv + n * 6.25mv)
     #ifdef CONFIG_MTK_SDIOAUTOK_SUPPORT
     if (is_vcore_ss_corner())
     {
-        ptp_init_value.VMIN    = 0x4E;    // 1.1850v (700mv + n * 6.25mv)
+        ptp_init_value.VMIN    = 0x46;    // 1.1850v (700mv + n * 6.25mv)
     }
     else
     {
-        ptp_init_value.VMIN    = 0x48;    // 1.1500v (700mv + n * 6.25mv)
+        ptp_init_value.VMIN    = 0x40;    // 1.1500v (700mv + n * 6.25mv)
     }
     #else
-    ptp_init_value.VMIN        = 0x48;    // 1.1500v (700mv + n * 6.25mv)
+    ptp_init_value.VMIN        = 0x40;    // 1.1500v (700mv + n * 6.25mv)
     #endif
     ptp_init_value.DTHI        = 0x01;    // positive
     ptp_init_value.DTLO        = 0xfe;    // negative (2s compliment)
-    ptp_init_value.VBOOT       = 0x48;    // 115v  (700mv + n * 6.25mv)
+    ptp_init_value.VBOOT       = 0x40;    // 115v  (700mv + n * 6.25mv)
     ptp_init_value.DETMAX      = 0xffff;  // This timeout value is in cycles of bclk_ck.
 
     if (ptp_version == 1)
@@ -1802,3 +1802,4 @@ late_initcall(ptp_init);
 
 MODULE_DESCRIPTION("MediaTek PTPOD Driver v0.2");
 MODULE_LICENSE("GPL");
+

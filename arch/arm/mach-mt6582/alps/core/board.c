@@ -823,3 +823,4 @@ struct mt6575_nand_host_hw mt6575_nand_hw = {
 	.nand_ecc_mode			= NAND_ECC_HW,
 };
 #endif
+

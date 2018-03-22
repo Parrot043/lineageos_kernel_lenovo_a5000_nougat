@@ -1340,7 +1340,7 @@ static DEVICE_ATTR(ADC_Channel_Is_Calibration, 0664, show_ADC_Channel_Is_Calibra
 static ssize_t show_Power_On_Voltage(struct device *dev, struct device_attribute *attr, char *buf)
 {
 	int ret_value = 1;
-	ret_value = 3300;
+	ret_value = 3400;
 	battery_xlog_printk(BAT_LOG_CRTI, "[EM] Power_On_Voltage : %d\n", ret_value);
 	return sprintf(buf, "%u\n", ret_value);
 }
@@ -1360,7 +1360,7 @@ static DEVICE_ATTR(Power_On_Voltage, 0664, show_Power_On_Voltage, store_Power_On
 static ssize_t show_Power_Off_Voltage(struct device *dev, struct device_attribute *attr, char *buf)
 {
 	int ret_value = 1;
-	ret_value = 3300;
+	ret_value = 3400;
 	battery_xlog_printk(BAT_LOG_CRTI, "[EM] Power_Off_Voltage : %d\n", ret_value);
 	return sprintf(buf, "%u\n", ret_value);
 }
