@@ -1,0 +1,22 @@
+image: ubuntu:xenial
+.job_name:
+  script: &build_script
+    - apt-get update -qyy
+    - apt-get install -qyy curl bc make git build-essential
+    - apt-get --yes install libglib2.0-dev curl flex g++-multilib gcc-multilib gnupg gperf lib32ncurses5-dev lib32z1-dev libesd0-dev libncurses5-dev libsdl1.2-dev libwxgtk-media3.0-dev libxml2 libxml2-utils lzop pngcrush schedtool squashfs-tools xsltproc zip zlib1g-dev
+    - git clone https://github.com/assusdan/android_toolchain
+    - export PATH=$PATH:$PWD/android_toolchain/linaro-4.9/bin/arm-eabi-
+    - export ARCH=arm
+    - export SUBARCH=arm
+    - export KBUILD_BUILD_USER=bulkin043
+    - export KBUILD_BUILD_HOST=4pda
+    - export TARGET_BUILD_VARIANT=adder
+    - export CROSS_COMPILE=$PWD/android_toolchain/linaro-4.9/bin/arm-eabi-
+    - make alps_defconfig 
+    - make
+    - curl --upload-file arch/arm/boot/Image.gz-dtb https://transfer.sh/Image.gz-dtb |grep transfer
+job_name: 
+  stage: test
+  tags:
+    - gitlab-org
+  script: *build_script
