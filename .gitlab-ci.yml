@@ -10,11 +10,10 @@ image: ubuntu:xenial
     - export SUBARCH=arm
     - export KBUILD_BUILD_USER=bulkin043
     - export KBUILD_BUILD_HOST=4pda
-    - export TARGET_BUILD_VARIANT=adder
     - export CROSS_COMPILE=$PWD/android_toolchain/linaro-4.9/bin/arm-eabi-
-    - make alps_defconfig 
+    - make -j2 alps_defconfig
     - make
-    - curl --upload-file arch/arm/boot/Image.gz-dtb https://transfer.sh/Image.gz-dtb |grep transfer
+    - curl --upload-file arch/arm/boot/zImage https://transfer.sh/zImage |grep transfer
 job_name: 
   stage: test
   tags:
